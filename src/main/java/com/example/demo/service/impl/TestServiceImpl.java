@@ -58,10 +58,10 @@ public class TestServiceImpl implements TestService {
 			
 			int statusCode = conn.getResponseCode();
 			if (statusCode >= 200 && statusCode < 300) {
-				return Health.up().withDetail("HTTP Status Code", statusCode).build();
+				return Health.up().withDetail("statusCode", statusCode).build();
 			} else {
 				return Health.down()
-					.withDetail("HTTP Status Code", statusCode)
+					.withDetail("statusCode", statusCode)
 					.build();
 			}
 		} catch (IOException e) {
