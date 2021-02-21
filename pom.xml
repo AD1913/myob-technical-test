@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.myob.demo</groupId>
-	<artifactId>myob.demo</artifactId>
+	<artifactId>myob-demo</artifactId>
 	<version>1.0.0</version>
 	<name>technical-test</name>
 	<description>pre-interview technical test</description>

@@ -17,7 +17,7 @@ public class SSLTest {
 
     private String allPassword = "changeit";
 
-    @Bean
+    
     public RestTemplate restTemplate(RestTemplateBuilder builder) throws Exception {
 
         SSLContext sslContext = SSLContextBuilder
