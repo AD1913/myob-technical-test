@@ -171,7 +171,9 @@ and API's need to be exposed using https. To make it more secure, either Mutual 
  API's, then can be accessed using the following URL's:
  
  https://localhost:443/myobdemo/v1/hello
+ 
  https://localhost:443/myobdemo/health
+ 
  https://localhost:443/myobdemo/info
 
 # Branching Strategy
@@ -195,7 +197,10 @@ This is a high level view of the branching strategy and more scenarios such as b
 # Branch Restrictions
 
 Check in's can be performed on feature branches by any of the developers who have write access to the repository.
+
 Any code to Develop and higher branches such as Master and Release branches can only be performed through pull requests.
 Atleast one approver has to review the code and approve the pull request before allowing the developer to merge with further
-branches. As an administrator, have performed the pull request here with out any approvals to showcase the pull request feature.
+branches. 
+
+As an administrator, have performed the pull request here with out any approvals to showcase the pull request feature.
 
