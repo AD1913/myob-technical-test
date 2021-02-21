@@ -158,13 +158,21 @@ This particular workflow does the following actions:
 All the dependencies within maven pom.xml uses the latest available dependencies from maven central. Any change in one of the
 latest dependencies might affect the application. In an ideal scenario, specific versioned dependencies can be used.
 
-Security has not been implemented for this application and it can be accessed by anyone. Certificates has to be implemented
-and API's need to be exposed using https. To make it more secure, either Mutual authentication with connecting applications
- or OAuth can be implemented.
-
 There are no environment specific variables in the current application, hence the properties specified in application.properties
 would be similar to all the environments. Environment specific variables need to be externalized and obtained during runtime.
+Spring Cloud Config can be used here to externalize the environment related properties if applicable.
 
+Security has not been implemented for this application and it can be accessed by anyone. Certificates has to be implemented
+and API's need to be exposed using https. To make it more secure, either Mutual authentication with connecting applications
+ or OAuth can be implemented. Though security has not been implemented in this demo for easier testing, relevant code has been
+ included in this repository.
+ 
+ To enable security, uncomment the lines in application.properties related to SSL from line 18 and rebuild the application.
+ API's, then can be accessed using the following URL's:
+ 
+ https://localhost:443/myobdemo/v1/hello
+ https://localhost:443/myobdemo/health
+ https://localhost:443/myobdemo/info
 
 # Branching Strategy
 
@@ -182,3 +190,12 @@ in the develop branch.
 Release branch deployed into production can safely be merged back to master as soon as the deployments are completed.
 
 This is a high level view of the branching strategy and more scenarios such as bugfix or hotfixes would be involved during the actual execution.
+
+
+# Branch Restrictions
+
+Check in's can be performed on feature branches by any of the developers who have write access to the repository.
+Any code to Develop and higher branches such as Master and Release branches can only be performed through pull requests.
+Atleast one approver has to review the code and approve the pull request before allowing the developer to merge with further
+branches. As an administrator, have performed the pull request here with out any approvals to showcase the pull request feature.
+
