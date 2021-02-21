@@ -10,6 +10,8 @@ return the required response. DAO classes are not included here since there is n
 
 #  Build and Run process for local
 
+Application can be executed by one of the following ways
+
 ## By Cloning the Code
 1. Clone the code from this GitHub repo
 2. Use the maven wrapper classes provided with this repo to build and run the application by following the below
@@ -153,7 +155,7 @@ This particular workflow does the following actions:
    the build phase.
 6. Final step is to publish the artifact to GitHub packages	
 
-# Risks Associated
+# Risks Associated & Suggested Solutions
 
 All the dependencies within maven pom.xml uses the latest available dependencies from maven central. Any change in one of the
 latest dependencies might affect the application. In an ideal scenario, specific versioned dependencies can be used.
@@ -164,11 +166,14 @@ Spring Cloud Config can be used here to externalize the environment related prop
 
 Security has not been implemented for this application and it can be accessed by anyone. Certificates has to be implemented
 and API's need to be exposed using https. To make it more secure, either Mutual authentication with connecting applications
- or OAuth can be implemented. Though security has not been implemented in this demo for easier testing, relevant code has been
- included in this repository.
+or OAuth can be implemented. Though security has not been implemented in this demo for easier testing, relevant code has been
+included in this repository.
  
- To enable security, uncomment the lines in application.properties related to SSL from line 18 and rebuild the application.
- API's, then can be accessed using the following URL's:
+If security or environment variables are enabled, secrets such as passwords and certificates can be stored and retrieved from 
+vaults such as Hashicorp. 
+ 
+To enable security, uncomment the lines in application.properties related to SSL from line 18 and rebuild the application.
+API's, then can be accessed using the following URL's:
  
  https://localhost:443/myobdemo/v1/hello
  
