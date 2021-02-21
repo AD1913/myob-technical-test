@@ -8,8 +8,9 @@ project are packages using maven.
 Controller classes are the entry points for the Rest API's which internally invoke methods from service classes to 
 return the required response. DAO classes are not included here since there is no dynamic data being populated.
 
-#  Build and Run process
+#  Build and Run process for local
 
+## By Cloning the Code
 1. Clone the code from this GitHub repo
 2. Use the maven wrapper classes provided with this repo to build and run the application by following the below
    mentioned steps
@@ -24,7 +25,7 @@ return the required response. DAO classes are not included here since there is n
       	./mvnw clean install
       ```
       
-   d. Run the below command to run the application.
+   d. Run either of the below commands to run the application.
    	  ```
    	  	./mvnw spring-boot:run
    	  ```
@@ -38,6 +39,15 @@ return the required response. DAO classes are not included here since there is n
    ```
    	./mvnw test -Dtest=TechnicalTestApplicationTestsIT
    ```
+
+## By using the published artifact from GitHub
+
+Download relevant jar file myob-demo-1.0.0.jar from https://github.com/akulad/myob-technical-test/packages
+
+Execute the below command from the location where the jar is downloaded
+	```
+	java -jar myob-demo-1.0.0.jar
+	```
 
 # API's
 
@@ -106,9 +116,12 @@ values
 # Github Actions
 
 Build pipelines for the above code has been implemented using GitHub Actions. Code related to pipelines are present under 
-.github/workflows folder under the project Root folder. There are 2 workflows created for this application. One is specific 
+.github/workflows folder under the project Root folder. Note, that these workflows only create the deployable artifact (a jar file here).
+But to test this application, code can be cloned and maven commands can be executed as mentioned in the "Build and Run process for local" section. 
+
+There are 2 workflows created for this application. One is specific 
 to feature branches which is for development purposes and usually does not cover all the scenarios present in the release 
-version of the workflow . These workflows are triggered as soon as the code commit is done for respective branches.
+version of the workflow. These workflows are triggered as soon as the code commit is done for respective branches.
 
 Apart from the below build pipelines, deploy pipelines can be added which would be specific to deployment environment on 
 which the applications would be running on. These pipelines can work based on the artifacts obtained out of the build 
